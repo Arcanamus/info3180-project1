@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block main%}
+<div class="property box-shadow">
+    <div class="property_image">
+        <img src="{{url_for('get_image', filename=prop_search.photo)}}">
+    </div>
+    <div class="property_info">
+        <h2>{{prop_search.title}}</h2>
+        <div>
+            <p class="property-price property_type">{{prop_search.type}}</p>
+            <p class="property-price price">${{prop_search.price}}</p>
+        </div>
+        <p>{{prop_search.description}}</p>
+        <div class="rooms_viewer">
+            <span class="rooms">
+                <img src="{{url_for('static',filename='bedroom-icon.png')}}">
+                <p>{{prop_search.bedrooms}} Bedrooms</p>
+            </span>
+            <span class="rooms">
+                <img src="{{url_for('static',filename='bathroom-icon.png')}}">
+                <p>{{prop_search.bathrooms}} Bathrooms</p>
+            </span>
+        </div>
+        <div class="location">
+            <img src="{{url_for('static', filename='location-icon.png')}}">
+            <p>{{prop_search.location}}</p>
+        </div>
+
+        <button class="btn btn-success">Email Realtor</button>
+    </div>
+
+</div>
+{%endblock%}
